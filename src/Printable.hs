@@ -1,2 +1,1 @@
 module Printable where
-

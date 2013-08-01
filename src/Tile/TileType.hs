@@ -4,5 +4,7 @@ module Tile.TileType
 
 import qualified Components as C
 
-data TileType = InfSource C.SourceData
-              | Wire C.WireData
+-- | Specifies the kind of a tile and
+-- stores all the data about it.
+data TileType = InfSource C.SourceData -- ^ Infinite source of energy.
+              | Wire C.WireData        -- ^ Transports energy in packs.
