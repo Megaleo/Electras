@@ -1,8 +1,5 @@
 module Electric
     ( ElectricData (..)
-    , module Electric.Flow
-    , module Electric.Energy
-    , module Electric.Pack
     ) where
 
 import Electric.Flow

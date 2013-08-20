@@ -1,6 +1,5 @@
 module Tile
     ( Tile (..)
-    , module Tile.TileType
     ) where
 
 import Tile.TileType
