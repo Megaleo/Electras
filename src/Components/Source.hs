@@ -2,8 +2,10 @@ module Components.Source
     ( SourceData (..)
     ) where
 
+import Electric.Pack
+import Electric.Direction
+
 -- | The data to define a source of
--- energy, that sends energy to its
--- output, either storing on it or
--- just generating by itself.
-data SourceData = SourceData
+-- energy, that sends a pack to its
+-- output on a direction.
+data SourceData = SourceData Pack Direction
