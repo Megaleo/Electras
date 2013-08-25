@@ -7,6 +7,7 @@ data Direction = DirUp
                | DirDown
                | DirLeft
                | DirRight
+               deriving Eq
 
 -- | Turns a direction into a unitary
 -- coordinate, based on SDL coordinates system.
