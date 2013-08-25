@@ -5,6 +5,7 @@ module Electric
 import Electric.Flow
 import Electric.Energy
 import Electric.Pack
+import Electric.Spin
 
 -- | Stores all the data to find the flow
 -- and the energy in a single tile. It may be
