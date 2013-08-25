@@ -1,10 +1,10 @@
 module Tile.Coordinates where
 
 -- | Int coordinate
-data Coord = (Int, Int)
+type Coord = (Int, Int)
 
 -- | Double coordinate
-data DCoord = (Double, Double)
+type DCoord = (Double, Double)
 
 -- | Rounds a DCoord
 roundDCoord :: DCoord -> Coord
