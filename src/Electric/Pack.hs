@@ -2,12 +2,14 @@ module Electric.Pack where
 
 import qualified Electric.Energy as E
 import qualified Electric.Flow as F
+import qualified Electric.Spin as S
 
 -- | A pack is the minimal particle of energy,
 -- it contains energy flow to moviment and
 -- pure energy.
 data Pack = Pack { pPureEnergy :: E.PureEnergy
                  , pEnergyFlow :: F.EnergyFlow
+                 , pSpin       :: S.Spin
                  } deriving Eq
 
 -- | The total energy of a pack.
@@ -23,4 +25,4 @@ energyPack (E.PE pe) (F.EF ef) = EP $ pe * ef
 -- | Calculates the energy pack of a pack,
 -- by multiplying the pure energy with the energy flow
 packEnergy :: Pack -> EnergyPack
-packEnergy (Pack pe ef) = energyPack pe ef
+packEnergy (Pack pe ef _) = energyPack pe ef

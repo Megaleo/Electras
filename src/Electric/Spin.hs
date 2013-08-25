@@ -5,3 +5,4 @@ module Electric.Spin where
 -- a 2 path decision.
 data Spin = ToLeft
           | ToRight
+          deriving Eq
