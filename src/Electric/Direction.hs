@@ -1,4 +1,8 @@
-module Electric.Direction where
+module Electric.Direction
+    ( Direction (..)
+    , oppositeDir
+    , normalizeToUp
+    ) where
 
 import Tile.Coordinates
 

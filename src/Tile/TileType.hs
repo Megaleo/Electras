@@ -1,5 +1,6 @@
 module Tile.TileType
     ( TileType (..)
+    , isWire
     ) where
 
 import qualified Electric as E

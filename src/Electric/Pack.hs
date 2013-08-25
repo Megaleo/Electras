@@ -1,4 +1,9 @@
-module Electric.Pack where
+module Electric.Pack
+    ( Pack (..)
+    , EnergyPack (..)
+    , energyPack
+    , packEnergy
+    ) where
 
 import qualified Electric.Energy as E
 import qualified Electric.Flow as F

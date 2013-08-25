@@ -1,4 +1,7 @@
-module Electric.Spin where
+module Electric.Spin
+    ( Spin (..)
+    , spinToDirection
+    ) where
 
 import qualified Electric.Direction as D
 
