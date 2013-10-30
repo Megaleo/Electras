@@ -8,7 +8,7 @@ import Data.IORef
 
 import qualified Electric.Circuit as C
 
--- | The state of the world, contains a name and circuits
-data WorldState = WorldState String [C.Circuit]
+-- | The state of the world, contains a name and the Circuit
+data World = World String C.Circuit
 
-type World = IORef WorldState
+type WorldState = IORef World
