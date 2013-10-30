@@ -22,8 +22,9 @@ source-repository head
 executable Electras
   main-is: Main.hs
   other-modules:
-    Printable
+    World
     Tile
+    Printable
     Tile.Coordinates
     Tile.TileType
     Electric
@@ -31,6 +32,8 @@ executable Electras
     Electric.Energy
     Electric.Flow
     Electric.Pack
-    Electric.Tendency
+    Electric.Circuit
 
   build-depends:       base >= 4.5 && < 5
+
+  hs-source-dirs: src/
