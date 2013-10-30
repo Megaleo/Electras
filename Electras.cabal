@@ -28,6 +28,7 @@ executable Electras
     Tile.Coordinates
     Tile.TileType
     Electric
+    Electric.Circuit
     Electric.Direction
     Electric.Energy
     Electric.Flow
