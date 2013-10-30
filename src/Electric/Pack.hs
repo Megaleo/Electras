@@ -7,15 +7,14 @@ module Electric.Pack
 
 import qualified Electric.Energy as E
 import qualified Electric.Flow as F
-import qualified Electric.Spin as S
 import qualified Electric.Direction as D
+import qualified Tile.Coordinates as C
 
 -- | A pack is the minimal particle of energy,
 -- it contains energy flow to moviment and
 -- pure energy.
 data Pack = Pack { pPureEnergy :: E.PureEnergy
                  , pEnergyFlow :: F.EnergyFlow
-                 , pSpin       :: S.Spin
                  , pDirection  :: D.Direction
                  } deriving Eq
 
@@ -23,6 +22,13 @@ data Pack = Pack { pPureEnergy :: E.PureEnergy
 -- It is formed by multiplying the
 -- pure energy with the energy flow.
 newtype EnergyPack = EP Int
+
+movePacks :: [(C.Coord, Maybe Pack)] -> [(C.Coord, Maybe Pack)]
+movePacks ((c, p1) : ps) =
+        case p1 of
+            Nothing -> (c, Nothing) : movePacks ps
+            Just p  -> [(c, Nothing), (c D.|+| directionCoord (pDirection p), p1)] ++ movePacks ps
+
 
 -- | Multiplies the pure energy an the energy flow
 -- to the the energy.
