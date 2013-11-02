@@ -39,3 +39,27 @@ energyPack (E.PE pe) (F.EF ef) = EP $ pe * ef
 -- by multiplying the pure energy with the energy flow
 packEnergy :: Pack -> EnergyPack
 packEnergy (Pack pe ef _ _) = energyPack pe ef
+
+-- | Change Direction
+changeDirection :: Pack -> D.Direction -> Pack
+changeDirection (Pack pe ef _) direction = Pack pe ef direction
+
+-- | Adjust Direction by applying a function
+adjustDirection :: Pack -> (D.Direction -> D.Direction) -> Pack
+adjustDirection (Pack pe ef d) adjust = Pack pe ef $ adjust d
+
+-- | Change the Pure Energy
+changePureEnergy :: Pack -> E.PureEnergy -> Pack
+changePureEnergy (Pack _ ef d) pureEnergy = Pack pureEnergy ef d
+
+-- | Adjust the Pure Energy by applying a function
+adjustPureEnergy :: Pack -> (E.PureEnergy -> E.PureEnergy) -> Pack
+adjustPureEnergy (Pack pe ef d) adjust = Pack (adjust pe) ef d
+
+-- | Change the Energy Flow
+changeEnergyFlow :: Pack -> F.EnergyFlow -> Pack
+changeEnergyFlow (Pack pe _ d) energyFlow = Pack pe energyFlow d
+
+-- | Adjust the Energy Flow by applying a function
+adjustEnergyFlow :: Pack -> (F.EnergyFlow -> F.EnergyFlow) -> Pack
+adjustEnergyFlow (Pack pe ef d) adjust = Pack pe (adjust ef) d
