@@ -9,3 +9,7 @@ import qualified Tile as T
 -- that consumes energy. All have their own coordinates.
 -- It is a form of tile organization.
 type Circuit = [CTile]
+
+-- | Updates all the Packs on a circuit
+moveCircuitPacks :: Circuit -> Circuit
+moveCircuitPacks cTiles = id
